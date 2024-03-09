@@ -42,9 +42,15 @@ public class StringManipulatorClass2 {
 	    }
 	    
 	    //This Function Will reverse the words of given sentence 
-	    public String reverseWords(String sentence) {
-	        StringJoiner sj = new StringJoiner(" ");
-	        for (String word : sentence.split("\\s")) sj.add(word);
-	        return new StringBuilder(sj.toString()).reverse().toString();
+	     public String reverseWords(String sentence) {
+	        String[] words = sentence.split("\\s");
+	        StringBuilder reversedSentence = new StringBuilder();
+	        for (int i = words.length - 1; i >= 0; i--) {
+	            reversedSentence.append(words[i]);
+	            if (i > 0) {
+	                reversedSentence.append(" ");
+	            }
+	        }
+	        return reversedSentence.toString();
 	    }
 }
